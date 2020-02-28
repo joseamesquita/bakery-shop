@@ -23,7 +23,7 @@ namespace Program
             }
             else
             {
-                Console.WriteLine("Have a great day. We look forward in seeing you soon");
+                Console.WriteLine("Have a great day. We look forward in seeing you soon.");
             }
 
         }
