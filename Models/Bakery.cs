@@ -10,22 +10,27 @@ namespace Model
         public Bakery(int loaf)
         {
             Loaf = loaf;
+            Cost = 5;
         }
         public void BreadCost()
         {
             if (Loaf == 1)
             {   
-                Cost = 5;
-                Console.WriteLine("Your total cost for one loaf of bread is: " + Cost);
+                Console.WriteLine("Your total cost for 1 loaf of bread is: " + Cost);
             }
-            else if (Loaf % 2 == 0 || Loaf % 3 == 0)
+            else if (Loaf == 2 || Loaf == 3 || Loaf == 4)
             {
                 Cost = Loaf * 5; 
-                int free = Loaf / 2;
-                Console.WriteLine("Your total cost for the loaf of bread is: " + Cost);
-                Console.WriteLine("Your total loafs you order: " + Loaf);
-                Console.WriteLine("Total loafs you receive for free: " + free);
-                Console.WriteLine("Total loafs you purchased: " + (Loaf + free));
+                Console.WriteLine("total cost for " + Loaf + "loafs of bread: " + Cost);
+            }
+            else if (Loaf == 5 || Loaf == 6)
+            {
+                Cost = 20;
+                Console.WriteLine("total cost for " + Loaf + " loafs of bread: " + Cost);
+            }
+            else 
+            {
+                Console.WriteLine("Sorry, we are only able to sell a quantity amount between 1-6 loafs of bread per guest.");
             }
            
 

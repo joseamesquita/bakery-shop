@@ -29,8 +29,10 @@ namespace Program
         }
         public static void Order()
         {
-            Console.WriteLine("Today's specials include, but 2 get 1 free for bread or a single loaf costs $5.");
-            Console.WriteLine("For pastries, but 1 for $2 or 3 for $5.");
+            Console.WriteLine("\n ----- Today's specials include ----- ");
+            Console.WriteLine("Bread: Buy 2, get 1 free. A single loaf costs $5.");
+            Console.WriteLine("Pastry: Buy 1 for $2 or 3 $5.");
+            Console.WriteLine("------------------------------------- ");
 
             int order = int.Parse(Console.ReadLine());
 
