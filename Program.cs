@@ -34,8 +34,9 @@ namespace Program
 
             int order = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(order);
             Console.WriteLine("----------------------");
+            Bakery bread = new Bakery(order);
+            bread.BreadCost();
         }
     }
 }
