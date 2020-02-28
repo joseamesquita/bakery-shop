@@ -15,9 +15,20 @@ namespace Model
         {
             if (Loaf == 1)
             {   
-                int Cost = 5;
-                Console.WriteLine("Your total cost for one loaf oof bread is: " + Cost);
+                Cost = 5;
+                Console.WriteLine("Your total cost for one loaf of bread is: " + Cost);
             }
+            else if (Loaf % 2 == 0 || Loaf % 3 == 0)
+            {
+                Cost = Loaf * 5; 
+                int free = Loaf / 2;
+                Console.WriteLine("Your total cost for the loaf of bread is: " + Cost);
+                Console.WriteLine("Your total loafs you order: " + Loaf);
+                Console.WriteLine("Total loafs you receive for free: " + free);
+                Console.WriteLine("Total loafs you purchased: " + (Loaf + free));
+            }
+           
+
         }
     }
     public  class Pastry
