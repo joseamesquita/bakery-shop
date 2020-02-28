@@ -16,21 +16,21 @@ namespace Model
         {
             if (Loaf == 1)
             {   
-                Console.WriteLine("Your total cost for 1 loaf of bread is: " + Cost);
+                Console.WriteLine("Your total cost for 1 loaf of bread is: " + "$" + Cost);
             }
             else if (Loaf == 2 || Loaf == 3 || Loaf == 4)
             {
-                Cost = Loaf * 5; 
-                Console.WriteLine("total cost for " + Loaf + "loafs of bread: " + Cost);
+                Cost = 10; 
+                Console.WriteLine("total cost for " + Loaf + " loafs of bread: " + "$" + Cost + "\n");
             }
             else if (Loaf == 5 || Loaf == 6)
             {
                 Cost = 20;
-                Console.WriteLine("total cost for " + Loaf + " loafs of bread: " + Cost);
+                Console.WriteLine("total cost for " + Loaf + " loafs of bread: " + "$" + Cost + "\n");
             }
             else 
             {
-                Console.WriteLine("Sorry, we are only able to sell a quantity amount between 1-6 loafs of bread per guest.");
+                Console.WriteLine("Sorry, we are only able to sell a quantity amount between 1-6 loafs of bread per guest. \n");
             }
            
 
