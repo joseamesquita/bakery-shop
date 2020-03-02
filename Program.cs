@@ -32,13 +32,33 @@ namespace Program
             Console.WriteLine("Bread: Buy 2, get 1 free. A single loaf costs $5.");
             Console.WriteLine("Pastry: Buy 1 for $2 or 3 for $5.");
             Console.WriteLine("------------------------------------- \n");
-            Console.WriteLine("How many loaf(s) of bread would you like to purchase?");
+            Console.WriteLine("Would you like to order Bread or Pastries? [BREAD] or [PASTRIES] \n");
+            string item = Console.ReadLine().ToUpper();
+            
+            if (item == "BREAD")
+            {
+                Console.WriteLine("\n" + "How many loaf(s) of bread would you like to purchase?");
 
-            int order = int.Parse(Console.ReadLine());
+                int order = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("------------------------------------- \n");
-            Bakery bread = new Bakery(order);
-            bread.BreadCost();
+                Console.WriteLine("------------------------------------- \n");
+                Bakery bread = new Bakery(order);
+                bread.BreadCost();
+            }
+            
+            else if (item == "PASTRIES") {
+                Console.WriteLine("\n" + "How many pastries would you like to purchase?");
+
+                int order = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("------------------------------------- \n");
+                Pastries pastry = new Pastries(order);
+                pastry.PastryCost();
+            }
+            
+            else {
+                Console.WriteLine("Please type BREAD or PASTRIES");
+            }
         }
     }
 }
