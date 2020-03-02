@@ -16,12 +16,21 @@ _This C# console application was designed for a bakery. This application will pr
 4. on terminal browse to your desktop: cd Desktop
 5. type: 'git clone https://github.com/joseamesquita/bakery-shop.git'
 6. type: 'code .' to view all source code on Visual Studio Code
-
+7. within the directory on the terminal type 'dotnet run' to run the program
 
 ## Specs
 
 Behavior | Input | Output
 --- | --- | ---
+1. 
+prompts user if they would like to order bread or pastries | YES | prompts user to select bread or pasrtry 
+prompts user to select bread or pasrtry | bread | prompts user how many loafs of bread 
+prompts user how many loafs of bread | 3 | $10 
+
+2. 
+prompts user if they would like to order bread or pastries | YES | prompts user to select bread or pasrtry 
+prompts user to select bread or pastries | pastries | prompts user how many pastries 
+prompts user how many pastries | 3 | $5
 
 ## Known Bugs
 
