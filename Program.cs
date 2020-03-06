@@ -1,7 +1,7 @@
 using System;
-using Model;
+using Bakery.Models;
 
-namespace Program
+namespace Bakery
 {
   public class Program
   {
@@ -42,7 +42,7 @@ namespace Program
         int order = int.Parse(Console.ReadLine());
 
         Console.WriteLine("------------------------------------- \n");
-        Bakery bread = new Bakery(order);
+        Bread bread = new Bread(order);
         bread.BreadCost();
       }
 

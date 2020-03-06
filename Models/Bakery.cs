@@ -1,13 +1,13 @@
 using System;
 
-namespace Model
+namespace Bakery.Models
 {
-  public class Bakery
+  public class Bread
   {
     public int Loaf { get; set; }
     public int Cost { get; set; }
 
-    public Bakery(int loaf)
+    public Bread(int loaf)
     {
       Loaf = loaf;
       Cost = 5;
