@@ -7,17 +7,23 @@ namespace Bakery
   {
     public static void Main()
     {
-      Program.Greeting();
-    }
-
-    public static void Greeting()
-    {
       Console.WriteLine("Hello, would you like to purchase any bread or pastries? [YES] or [NO] \n");
       string response = Console.ReadLine().ToUpper();
+      Program.Greeting(response);
+    }
+
+    public static void Greeting(string response)
+    {
 
       if (response == "YES")
       {
-        Program.Order();
+        Console.WriteLine("\n ----- Today's specials include ----- ");
+        Console.WriteLine("Bread: Buy 2, get 1 free. A single loaf costs $5.");
+        Console.WriteLine("Pastry: Buy 1 for $2 or 3 for $5.");
+        Console.WriteLine("------------------------------------- \n");
+        Console.WriteLine("Would you like to order Bread or Pastries? [BREAD] or [PASTRIES] \n");
+        string item = Console.ReadLine().ToUpper();
+        Program.Order(item);
 
       }
       else
@@ -26,15 +32,9 @@ namespace Bakery
       }
 
     }
-    public static void Order()
+    public static void Order(string item)
     {
-      Console.WriteLine("\n ----- Today's specials include ----- ");
-      Console.WriteLine("Bread: Buy 2, get 1 free. A single loaf costs $5.");
-      Console.WriteLine("Pastry: Buy 1 for $2 or 3 for $5.");
-      Console.WriteLine("------------------------------------- \n");
-      Console.WriteLine("Would you like to order Bread or Pastries? [BREAD] or [PASTRIES] \n");
-      string item = Console.ReadLine().ToUpper();
-
+      string result = "";
       if (item == "BREAD")
       {
         Console.WriteLine("\n" + "How many loaf(s) of bread would you like to purchase?");
@@ -59,8 +59,12 @@ namespace Bakery
 
       else
       {
-        Console.WriteLine("Please type BREAD or PASTRIES");
+
+        Console.WriteLine("\n" + "Please type BREAD or PASTRIES \n");
+        result = Console.ReadLine();
       }
+
+      Program.Order(result);
     }
   }
 }
