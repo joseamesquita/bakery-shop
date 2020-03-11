@@ -16,22 +16,26 @@ namespace Bakery.Models
     {
       if (Loaf == 1)
       {
-        Console.WriteLine("Your total cost for 1 loaf of bread is: " + "$" + Cost);
+        Console.WriteLine("Your total cost for " + Loaf + "loaf of bread is: " + "$" + Cost);
       }
-      else if (Loaf == 2 || Loaf == 3 || Loaf == 4)
+      else if (Loaf == 2)
       {
-        Cost = 10;
-        Console.WriteLine("total cost for " + Loaf + " loafs of bread: " + "$" + Cost + "\n");
+        Loaf++;
+        Console.WriteLine("Your total cost for " + Loaf + " loafs of bread is: " + "$" + Cost + "\n");
       }
-      else if (Loaf == 5 || Loaf == 6)
+      else if (Loaf % 3 == 0)
       {
-        Cost = 20;
-        Console.WriteLine("total cost for " + Loaf + " loafs of bread: " + "$" + Cost + "\n");
+        int free = (Loaf / 3);
+        Cost = ((Loaf - free) * 5);
+        Console.WriteLine("Your total cost for " + Loaf + " loafs of bread is: " + "$" + Cost + "\n");
       }
       else
       {
-        Console.WriteLine("Sorry, we are only able to sell a quantity amount between 1-6 loafs of bread per guest. \n");
+        int free = (Loaf / 3);
+        Cost = ((Loaf - free) * 5);
+        Console.WriteLine("Your total cost for " + Loaf + " loafs of bread is: " + "$" + Cost + "\n");
       }
+      Program.BuyMore();
     }
   }
   public class Pastries
@@ -56,30 +60,19 @@ namespace Bakery.Models
         Cost += 4;
         Console.WriteLine("total cost for " + Pastry + " pastries: " + "$" + Cost + "\n");
       }
-      else if (Pastry == 3)
+      else if (Pastry % 3 == 0)
       {
-        Cost += 5;
-        Console.WriteLine("total cost for " + Pastry + " pastries: " + "$" + Cost + "\n");
-      }
-      else if (Pastry == 4)
-      {
-        Cost += 7;
-        Console.WriteLine("total cost for " + Pastry + " pastries: " + "$" + Cost + "\n");
-      }
-      else if (Pastry == 5)
-      {
-        Cost += 9;
-        Console.WriteLine("total cost for " + Pastry + " pastries: " + "$" + Cost + "\n");
-      }
-      else if (Pastry == 6)
-      {
-        Cost += 10;
+        int free = (Pastry / 3);
+        Cost = ((Pastry * 2) - free);
         Console.WriteLine("total cost for " + Pastry + " pastries: " + "$" + Cost + "\n");
       }
       else
       {
-        Console.WriteLine("Sorry, we are only able to sell a quantity amount between 1-6 pastries per guest. \n");
+        int free = (Pastry / 3);
+        Cost = ((Pastry * 2) - free);
+        Console.WriteLine("total cost for " + Pastry + " pastries: " + "$" + Cost + "\n");
       }
+      Program.BuyMore();
     }
   }
 }

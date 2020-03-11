@@ -26,14 +26,21 @@ namespace Bakery
         Program.Order(item);
 
       }
+      else if (response == "NO")
+      {
+        Console.WriteLine("\n" + "Thank you for stopping by, have a great day!");
+      }
       else
       {
-        Console.WriteLine("Have a great day. We look forward in seeing you soon.");
+        Console.WriteLine("\n" + "Please type [yes] or type [no] to proceed with your order.");
+        string respond = Console.ReadLine().ToUpper();
+        Greeting(respond);
       }
 
     }
     public static void Order(string item)
     {
+      item.ToUpper();
       string result = "";
       if (item == "BREAD")
       {
@@ -44,6 +51,7 @@ namespace Bakery
         Console.WriteLine("------------------------------------- \n");
         Bread bread = new Bread(order);
         bread.BreadCost();
+
       }
 
       else if (item == "PASTRIES")
@@ -62,9 +70,30 @@ namespace Bakery
 
         Console.WriteLine("\n" + "Please type BREAD or PASTRIES \n");
         result = Console.ReadLine();
+        Order(result.ToUpper());
       }
+    }
 
-      Program.Order(result);
+    public static string BuyMore()
+    {
+      Console.WriteLine("Would you like to buy more? If yes, type [yes]. If no, type [no]");
+      string result = Console.ReadLine().ToUpper();
+
+      while (result == "YES")
+      {
+        Order(result);
+      }
+      if (result == "NO")
+      {
+        Console.WriteLine("\n" + "Thank you for stopping by, have a great day!" + "\n");
+        return null;
+
+      }
+      else
+      {
+        Console.WriteLine("type [yes] or [no]");
+        return Program.BuyMore();
+      }
     }
   }
 }
